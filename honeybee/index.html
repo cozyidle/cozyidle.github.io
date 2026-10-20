@@ -3,86 +3,99 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Honey Bee Idle: Tester</title>
-  <meta name="description" content="Thanks for testing Honey Bee Idle! Two quick steps to get the game.">
+  <title>Honey Bee Idle: Sweet Tycoon</title>
+  <meta name="description" content="Keep bees, make honey and grow a sunny meadow farm. Join the closed test on Google Play.">
   <meta name="theme-color" content="#F5B21B">
-  <meta property="og:title" content="Test Honey Bee Idle before launch!">
-  <meta property="og:description" content="Grow a buzzing hive, one golden drop at a time. Two quick steps to join.">
+  <meta property="og:title" content="Honey Bee Idle: Sweet Tycoon">
+  <meta property="og:description" content="Keep bees, make honey and grow a sunny meadow farm. Join the closed test on Google Play.">
   <meta property="og:image" content="https://cozyidle.github.io/assets/icons/honeybee.png">
   <meta property="og:url" content="https://cozyidle.github.io/honeybee/">
   <meta property="og:type" content="website">
-  <link rel="icon" href="../assets/icons/honeybee.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://cozyidle.github.io/honeybee/">
+  <link rel="icon" href="../assets/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@500;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../assets/style.css">
   <style>:root { --c1: #F5B21B; --c2: #FFDF6B; }</style>
 </head>
-<body data-game="honeybee">
-  <div class="sky"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div></div>
-  <div class="particles"></div>
-
-  <div class="wrap narrow">
+<body data-game="honeybee" data-status="testing" data-particles='["🐝", "🌼", "🍯"]'>
+  <div class="sky" aria-hidden="true"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div></div>
+  <div class="particles" aria-hidden="true"></div>
+  <div class="wrap">
     <header class="topbar">
       <a class="brand" href="../"><span class="brand-mark">c</span><span>cozyidle</span></a>
-      <a class="back" href="../">All games</a>
+      <nav class="nav"><a href="../#games">All games</a></nav>
     </header>
 
     <div class="inapp" id="inapp">
       <b>Open this page in Chrome</b>
       <p>Google Play sign-in doesn't work inside Messenger or Facebook.</p>
-      <a class="btn" id="chrome" href="#">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="#DB4437"/><path d="M12 2a10 10 0 0 1 8.66 5H12a5 5 0 0 0-4.33 2.5L3.34 7A10 10 0 0 1 12 2z" fill="#DB4437"/><path d="M20.66 7A10 10 0 0 1 12 22l4.33-7.5A5 5 0 0 0 16.33 9.5 5 5 0 0 0 12 7z" fill="#FFCD40"/><path d="M12 22A10 10 0 0 1 3.34 7l4.33 7.5A5 5 0 0 0 12 17z" fill="#0F9D58"/><circle cx="12" cy="12" r="4.2" fill="#fff"/><circle cx="12" cy="12" r="3.3" fill="#4285F4"/></svg>
-        Open in Chrome
-      </a>
+      <a class="btn light" id="chrome" href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="#DB4437"/><path d="M20.66 7A10 10 0 0 1 12 22l4.33-7.5A5 5 0 0 0 16.33 9.5 5 5 0 0 0 12 7z" fill="#FFCD40"/><path d="M12 22A10 10 0 0 1 3.34 7l4.33 7.5A5 5 0 0 0 12 17z" fill="#0F9D58"/><circle cx="12" cy="12" r="4.2" fill="#fff"/><circle cx="12" cy="12" r="3.3" fill="#4285F4"/></svg> Open in Chrome</a>
       <div class="ios-hint">Tap <b>•••</b> at the top, then <b>Open in browser</b>.</div>
     </div>
-
-    <section class="game-hero">
-      <div class="icon-stage"><div class="ring"></div><img id="icon" src="../assets/icons/honeybee.png" alt="Honey Bee Idle icon" width="168" height="168"></div>
-      <h1 id="name">Honey Bee Idle</h1>
-      <span class="thanks">💛 Thanks for testing!</span>
-      <p class="tag" id="tag">Grow a buzzing hive, one golden drop at a time.</p>
-    </section>
-
-    <section class="steps">
-      <div class="step" id="step-optin">
-        <div class="step-head">
-          <span class="num"><span>1</span></span>
-          <div><h3>Become a tester</h3><div class="sub">Opens Google Play. Tap <b>"Become a tester"</b>.</div></div>
-        </div>
-        <a class="btn" id="optin" href="#" target="_blank" rel="noopener">✨ Join the test</a>
+    <section class="hero game-hero">
+      <div class="hero-text">
+        <div class="title-row"><img class="app-icon" src="../assets/icons/honeybee.png" alt="" width="256" height="256"><span class="badge testing"><span class="dot"></span>In testing</span></div>
+        <h1>Honey Bee Idle</h1>
+        <p>Keep bees, make honey and grow a sunny meadow farm.</p>
+        <div class="cta-row"><a class="btn" href="#test">✨ Become a tester</a><a class="btn ghost" href="#about">What's inside</a></div>
       </div>
+      <div class="hero-visual"><div class="phone"><img src="../assets/shots/honeybee-1.jpg" alt="Honey Bee Idle screenshot" width="432" height="768"></div></div>
+    </section>
 
-      <div class="step" id="step-install">
-        <div class="step-head">
-          <span class="num"><span>2</span></span>
-          <div><h3>Install from Google Play</h3><div class="sub">Opens the game in the Play Store app.</div></div>
+    <section class="gallery reveal" aria-label="Screenshots">
+      <div class="shots"><img src="../assets/shots/honeybee-1.jpg" alt="Honey Bee Idle screenshot 1" loading="lazy" width="432" height="768"><img src="../assets/shots/honeybee-2.jpg" alt="Honey Bee Idle screenshot 2" loading="lazy" width="432" height="768"><img src="../assets/shots/honeybee-3.jpg" alt="Honey Bee Idle screenshot 3" loading="lazy" width="432" height="768"><img src="../assets/shots/honeybee-4.jpg" alt="Honey Bee Idle screenshot 4" loading="lazy" width="432" height="768"><img src="../assets/shots/honeybee-5.jpg" alt="Honey Bee Idle screenshot 5" loading="lazy" width="432" height="768"><img src="../assets/shots/honeybee-6.jpg" alt="Honey Bee Idle screenshot 6" loading="lazy" width="432" height="768"></div>
+    </section>
+    <section class="about" id="about">
+      <div class="section-head reveal"><span class="eyebrow">What's inside</span><h2>A cozy little story</h2><p>Grandpa Bramble, the old beekeeper, hands you his hives. Walk little Honey the bear cub around the farm, collect honeycomb from the bees and turn it into honey jars, candles and pretty gift boxes.</p></div>
+      <div class="feats"><div class="feat reveal" style="--d:0.00s"><span class="feat-ic">🐝</span><b>Busy bees</b><span>Bees fly from the flowers and fill a jar by each hive, one comb at a time.</span></div><div class="feat reveal" style="--d:0.07s"><span class="feat-ic">🕯️</span><b>Craft sweet goods</b><span>Build the Wax Press, Candle Workshop and Gift Shop. Every step is worth more.</span></div><div class="feat reveal" style="--d:0.14s"><span class="feat-ic">🏡</span><b>Hut to manor</b><span>Five levels, from a Flower Meadow to the golden Honey Manor.</span></div><div class="feat reveal" style="--d:0.21s"><span class="feat-ic">👑</span><b>Rare bees</b><span>Bumble, Golden, Rose, Rainbow and the Queen Bee, each faster than the last.</span></div></div>
+    </section>
+
+    <section class="tester" id="test">
+      <div class="section-head reveal"><span class="eyebrow">Closed testing</span><h2>Become a tester</h2><p>Two quick steps. Thank you for helping! 💛</p></div>
+      <div class="steps">
+        <div class="step reveal" id="step-optin">
+          <div class="step-head">
+            <span class="num"><span>1</span></span>
+            <div><h3>Join the test</h3><div class="sub">Opens Google Play. Tap <b>"Become a tester"</b>.</div></div>
+          </div>
+          <a class="btn" id="optin" href="https://play.google.com/apps/testing/com.alauddin.honeybeeidle" target="_blank" rel="noopener">✨ Join the test</a>
         </div>
-        <a class="btn" id="install" href="#" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 2.5v19l10-9.5z" fill="#fff" opacity=".95"/><path d="M14 12l3.2 3.1L21 13c.9-.5.9-1.5 0-2l-3.8-2.1z" fill="#fff" opacity=".7"/><path d="M4 2.5L14 12l3.2-3.1L5.4 2.2c-.5-.3-1-.2-1.4.3z" fill="#fff" opacity=".85"/><path d="M4 21.5c.4.5.9.6 1.4.3l11.8-6.7L14 12z" fill="#fff" opacity=".6"/></svg>
-          Install on Google Play
-        </a>
+        <div class="step reveal" id="step-install">
+          <div class="step-head">
+            <span class="num"><span>2</span></span>
+            <div><h3>Install from Google Play</h3><div class="sub">Opens the game in the Play Store app.</div></div>
+          </div>
+          <a class="btn" id="install" href="https://play.google.com/store/apps/details?id=com.alauddin.honeybeeidle" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 2.5v19l10-9.5z" fill="#fff" opacity=".95"/><path d="M14 12l3.2 3.1L21 13c.9-.5.9-1.5 0-2l-3.8-2.1z" fill="#fff" opacity=".7"/><path d="M4 2.5L14 12l3.2-3.1L5.4 2.2c-.5-.3-1-.2-1.4.3z" fill="#fff" opacity=".85"/><path d="M4 21.5c.4.5.9.6 1.4.3l11.8-6.7L14 12z" fill="#fff" opacity=".6"/></svg> Install on Google Play</a>
+        </div>
       </div>
-    </section>
-
-    <section class="notes">
-      <h3>A few small things</h3>
-      <ul>
-        <li><span class="ic">📧</span><span>Stay signed in with the <b>same Gmail</b> you gave us.</span></li>
-        <li><span class="ic">🔄</span><span>See <b>"Item not found"</b>? Switch to that Gmail in the Play Store (tap your profile picture).</span></li>
-        <li><span class="ic">📅</span><span>Please <b>keep the game installed for 14 days</b>. It really helps!</span></li>
-      </ul>
-    </section>
-
-    <div class="share">
+      <div class="notes reveal">
+        <h3>A few small things</h3>
+        <ul>
+          <li><span class="ic">📧</span><span>Stay signed in with the <b>same Gmail</b> you gave us.</span></li>
+          <li><span class="ic">🔄</span><span>See <b>"Item not found"</b>? Switch to that Gmail in the Play Store (tap your profile picture).</span></li>
+          <li><span class="ic">📅</span><span>Please <b>keep the game installed for 14 days</b>. It really helps!</span></li>
+        </ul>
+      </div>
       <button class="btn ghost" id="share" type="button">🔗 Share this page</button>
-    </div>
+    </section>
+    <section class="more">
+      <div class="section-head reveal"><span class="eyebrow">More from cozyidle</span><h2>Other cozy worlds</h2></div>
+      <div class="minis"><a class="mini" href="../bakery/" style="--c1:#EE7D3B"><img src="../assets/icons/bakery.png" alt="" loading="lazy" width="256" height="256"><span>Cozy Bakery Idle</span></a><a class="mini" href="../flower/" style="--c1:#E2608F"><img src="../assets/icons/flower.png" alt="" loading="lazy" width="256" height="256"><span>Flower Shop Idle</span></a><a class="mini" href="../petsalon/" style="--c1:#F28A5B"><img src="../assets/icons/petsalon.png" alt="" loading="lazy" width="256" height="256"><span>Pet Salon Idle</span></a><a class="mini" href="../sheep/" style="--c1:#4F8FD9"><img src="../assets/icons/sheep.png" alt="" loading="lazy" width="256" height="256"><span>Sheep Merge</span></a><a class="mini" href="../wooltree/" style="--c1:#2E9E5B"><img src="../assets/icons/wooltree.png" alt="" loading="lazy" width="256" height="256"><span>Wool Tree Idle</span></a></div>
+    </section>
   </div>
-
-  <footer>Made with 💛 by cozyidle</footer>
-
-  <script src="../assets/games.js"></script>
+  <footer class="footer">
+    <div class="wrap">
+      <div class="foot-top">
+        <a class="brand" href="../"><span class="brand-mark">c</span><span>cozyidle</span></a>
+        <p>Small, gentle games made with love.</p>
+      </div>
+      <div class="foot-links one"><div><b>Honey Bee Idle</b><a href="https://alauddinahmed9282.github.io/honey-bee/privacy.html">Privacy Policy</a><a href="https://alauddinahmed9282.github.io/honey-bee/support.html">Support</a></div></div>
+      <p class="copy">© 2026 cozyidle · <a href="mailto:alauddinahmed7888@gmail.com">alauddinahmed7888@gmail.com</a></p>
+    </div>
+  </footer>
   <script src="../assets/app.js"></script>
 </body>
 </html>

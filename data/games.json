@@ -1,0 +1,129 @@
+{
+  "_help": "status: testing | live | soon. After editing run: python tools/build.py",
+  "site": {
+    "email": "alauddinahmed7888@gmail.com",
+    "policy_base": "https://alauddinahmed9282.github.io/"
+  },
+  "games": [
+    {
+      "slug": "honeybee",
+      "name": "Honey Bee Idle",
+      "title": "Honey Bee Idle: Sweet Tycoon",
+      "pkg": "com.alauddin.honeybeeidle",
+      "status": "testing",
+      "tagline": "Keep bees, make honey and grow a sunny meadow farm.",
+      "intro": "Grandpa Bramble, the old beekeeper, hands you his hives. Walk little Honey the bear cub around the farm, collect honeycomb from the bees and turn it into honey jars, candles and pretty gift boxes.",
+      "features": [
+        ["🐝", "Busy bees", "Bees fly from the flowers and fill a jar by each hive, one comb at a time."],
+        ["🕯️", "Craft sweet goods", "Build the Wax Press, Candle Workshop and Gift Shop. Every step is worth more."],
+        ["🏡", "Hut to manor", "Five levels, from a Flower Meadow to the golden Honey Manor."],
+        ["👑", "Rare bees", "Bumble, Golden, Rose, Rainbow and the Queen Bee, each faster than the last."]
+      ],
+      "shots": 6,
+      "policy": "honey-bee/",
+      "color": "#F5B21B",
+      "color2": "#FFDF6B",
+      "particles": ["🐝", "🌼", "🍯"]
+    },
+    {
+      "slug": "bakery",
+      "name": "Cozy Bakery Idle",
+      "title": "Cozy Bakery Idle: Cake Tycoon",
+      "pkg": "com.alauddin.cozybakeryidle",
+      "status": "testing",
+      "tagline": "Bake bread and cakes and serve woodland customers.",
+      "intro": "Nana Nutmeg, the old baker cat, hands you the keys to a little autumn bakery. Walk Biscuit the cat around the island, collect wheat from the hamsters and bake it into treats your customers love.",
+      "features": [
+        ["🐹", "Helpful hamsters", "Hamsters carry wheat from the fields and nap on the straw when the sack is full."],
+        ["🎂", "Bread to fancy cakes", "Build the Flour Mill, Cake Oven and Icing Table to bake finer treats."],
+        ["🦊", "Cozy customers", "Rabbits, hedgehogs, foxes and owls in knitted scarves. Nobody ever leaves angry."],
+        ["🎃", "Pumpkin manor", "Grow your pumpkin cottage into the Golden Pumpkin Manor."]
+      ],
+      "shots": 6,
+      "policy": "cozy-bakery/",
+      "color": "#EE7D3B",
+      "color2": "#FFC08A",
+      "particles": ["🥐", "🍰", "🍂"]
+    },
+    {
+      "slug": "flower",
+      "name": "Flower Shop Idle",
+      "title": "Flower Shop Idle: Cozy Bloom",
+      "pkg": "com.alauddin.flowershop",
+      "status": "testing",
+      "tagline": "Grow, arrange and sell flowers in Grandma Rose's garden.",
+      "intro": "Help Poppy the bunny bring Grandma Rose's old flower shop back to life. Grow the blooms, tie them into bouquets and welcome the sweetest customers up the garden road.",
+      "features": [
+        ["🌷", "A garden in bloom", "Daisies, tulips, sunflowers, roses, lavender, lilies and orchids. Light rain helps them grow."],
+        ["💐", "Bunches & bouquets", "Pick flowers and tie bunches, bouquets, baskets and wreaths."],
+        ["🐸", "Frog helpers", "Hire frogs who tie bunches for you, even while you're away."],
+        ["💒", "Wedding Studio", "Open the Greenhouse and Wedding Studio for big, beautiful orders."]
+      ],
+      "shots": 0,
+      "policy": "flower-shop/",
+      "color": "#E2608F",
+      "color2": "#FFB3CB",
+      "particles": ["🌷", "🌸", "🌼"]
+    },
+    {
+      "slug": "petsalon",
+      "name": "Pet Salon Idle",
+      "title": "Pet Salon Idle: Cozy Groom",
+      "pkg": "com.alauddin.petsalon",
+      "status": "testing",
+      "tagline": "Wash, groom and style cute pets in a cozy salon.",
+      "intro": "Auntie Clover's salon has been shut for years, and every pet in town misses it. Help Mochi the corgi open it again and turn the little salon into the finest spa in town.",
+      "features": [
+        ["🛁", "Pamper every pet", "Puppies, kittens, bunnies and fox kits go from the Wash Tub to the Dryer and the Trim Table."],
+        ["🎀", "Style them up", "Bows, knit hats and cozy scarves, then a happy look in the mirror."],
+        ["🐰", "Helper bunnies", "Bunnies bring pets to the stations by themselves, and nap when they're tired."],
+        ["🌿", "Spa Garden", "Open the Style Studio and a Spa Garden with a little pool."]
+      ],
+      "shots": 0,
+      "policy": "pet-salon/",
+      "color": "#F28A5B",
+      "color2": "#8FD3F4",
+      "particles": ["🫧", "🐾", "🎀"]
+    },
+    {
+      "slug": "sheep",
+      "name": "Sheep Merge",
+      "title": "Sheep Merge: Cozy Wool Farm",
+      "pkg": "com.alauddin.sheepmerge",
+      "status": "testing",
+      "tagline": "Merge fluffy sheep and knit for a snowy village.",
+      "intro": "The village is all snowed in and the villagers need warm things. Help Granny Purl grow sheep, gather their wool, knit cozy clothes and bring the village back to life.",
+      "features": [
+        ["🐑", "Merge & grow", "Drag two of the same together: lambs grow all the way to the Golden Sheep."],
+        ["🧣", "Knit cozy things", "Mittens, scarves, beanies, sweaters and quilts. Plus cocoa and cookies."],
+        ["🦉", "Friendly orders", "A bunny, a fox, an owl and a hedgehog come by. No timers, nobody leaves angry."],
+        ["🏘️", "Mend the village", "Paint the barn, light the lanterns and put the star on the big tree."]
+      ],
+      "shots": 0,
+      "policy": "sheep-merge/",
+      "color": "#4F8FD9",
+      "color2": "#BFE0FF",
+      "particles": ["❄️", "🧶", "🐑"]
+    },
+    {
+      "slug": "wooltree",
+      "name": "Wool Tree Idle",
+      "title": "Wool Tree Idle: Silk Tycoon",
+      "pkg": "com.alauddin.wooltreeidle",
+      "status": "testing",
+      "tagline": "Grow silkworms, knit sweaters and build a winter wool farm.",
+      "intro": "Play as a little lamb, Granny Fluff's grandchild. Grow magical mulberry trees, let busy silkworms spin wool, and turn it into sweaters, yarn, fabric and clothes.",
+      "features": [
+        ["🐛", "Silkworms work for you", "Silkworms carry wool from the trees into jars. Walk over and collect it."],
+        ["🧥", "Craft & sell", "Unlock the Spinning Wheel, the Loom and the Tailor Shop."],
+        ["🌈", "Rare silkworms", "Blue, Golden, Ruby, Rainbow and the legendary Royal silkworm."],
+        ["💤", "Earn while away", "Your farm keeps working when the game is closed."]
+      ],
+      "shots": 6,
+      "policy": "",
+      "color": "#2E9E5B",
+      "color2": "#8EDB9F",
+      "particles": ["🧶", "❄️", "✨"]
+    }
+  ]
+}
