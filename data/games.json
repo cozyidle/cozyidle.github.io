@@ -117,7 +117,7 @@
           "Open the Greenhouse and Wedding Studio for big, beautiful orders."
         ]
       ],
-      "shots": 0,
+      "shots": 6,
       "policy": "flower-shop/",
       "color": "#E2608F",
       "color2": "#FFB3CB",
@@ -126,7 +126,7 @@
         "🌸",
         "🌼"
       ],
-      "video": false
+      "video": true
     },
     {
       "slug": "petsalon",
@@ -249,7 +249,7 @@
         "❄️",
         "✨"
       ],
-      "video": false
+      "video": true
     }
   ]
 }
