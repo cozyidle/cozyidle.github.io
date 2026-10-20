@@ -378,8 +378,8 @@ section { scroll-margin-top: 16px; }
 .mini img { width: 48px; height: 48px; border-radius: 14px; flex: none; }
 
 /* ---------- effects ---------- */
-.reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s cubic-bezier(.2, .9, .3, 1.2); transition-delay: var(--d, 0s); }
-.reveal.in { opacity: 1; transform: none; }
+.js .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s cubic-bezier(.2, .9, .3, 1.2); transition-delay: var(--d, 0s); }
+.js .reveal.in { opacity: 1; transform: none; }
 .game-card.reveal.in:hover { transform: translateY(-6px) rotate(-1deg); transition-delay: 0s; }
 
 .toast {
@@ -397,6 +397,6 @@ section { scroll-margin-top: 16px; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
-  .reveal { opacity: 1; transform: none; }
+  .js .reveal { opacity: 1; transform: none; }
   .particles { display: none; }
 }

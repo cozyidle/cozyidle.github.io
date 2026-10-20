@@ -2,6 +2,7 @@
 
 Run after any change to data/games.json:  python tools/build.py
 """
+import hashlib
 import html
 import json
 import pathlib
@@ -12,6 +13,8 @@ SITE = DATA["site"]
 GAMES = DATA["games"]
 BASE = "https://cozyidle.github.io/"
 E = html.escape
+# Changes whenever the CSS/JS changes, so browsers never mix a new page with an old cached file.
+VER = hashlib.md5(b"".join((ROOT / "assets" / f).read_bytes() for f in ("style.css", "app.js"))).hexdigest()[:8]
 
 STATUS = {
     "live": ("On Google Play", "live"),
@@ -43,9 +46,10 @@ def policy(g, page):
 
 def head(title, desc, image, url, prefix, color, extra=""):
     return f"""<!doctype html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
   <meta charset="utf-8">
+  <script>document.documentElement.className = "js";</script>
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>{E(title)}</title>
   <meta name="description" content="{E(desc)}">
@@ -61,7 +65,7 @@ def head(title, desc, image, url, prefix, color, extra=""):
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@500;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{prefix}assets/style.css">{extra}
+  <link rel="stylesheet" href="{prefix}assets/style.css?v={VER}">{extra}
 </head>"""
 
 
@@ -93,7 +97,7 @@ def footer(prefix, links):
       <p class="copy">© 2026 cozyidle · <a href="mailto:{SITE['email']}">{SITE['email']}</a></p>
     </div>
   </footer>
-  <script src="{prefix}assets/app.js"></script>
+  <script src="{prefix}assets/app.js?v={VER}"></script>
 </body>
 </html>
 """
