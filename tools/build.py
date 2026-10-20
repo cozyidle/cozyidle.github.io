@@ -201,11 +201,11 @@ def build_game(g):
     more = '<a class="btn ghost" href="#about">What\'s inside</a>'
 
     if g.get("video"):
-        # the store preview video, playing silently in the phone; tap the button for sound
+        # the store preview video, playing with its sound in the phone (app.js)
         visual = (
             f'<div class="phone has-video"><video src="../assets/video/{slug}.mp4" poster="../assets/video/{slug}.jpg" '
-            f'autoplay muted loop playsinline preload="metadata" aria-label="{E(g["name"])} gameplay video"></video>'
-            '<button class="sound" type="button" aria-label="Turn sound on">🔇</button></div>'
+            f'autoplay loop playsinline preload="auto" aria-label="{E(g["name"])} gameplay video"></video>'
+            '<button class="sound" type="button" aria-label="Turn sound off">🔊</button></div>'
         )
     elif g["shots"]:
         visual = f"""<div class="phone"><img src="../assets/shots/{slug}-1.jpg" alt="{E(g['name'])} screenshot" width="432" height="768"></div>"""
@@ -213,7 +213,7 @@ def build_game(g):
         visual = f'<div class="icon-stage big"><div class="ring"></div><img src="../assets/icons/{slug}.png" alt="" width="256" height="256"></div>'
     if g["shots"]:
         shots = "".join(
-            f'<img src="../assets/shots/{slug}-{i}.jpg" alt="{E(g["name"])} screenshot {i}" loading="lazy" width="432" height="768">'
+            f'<img src="../assets/shots/{slug}-{i}.jpg" data-big="../assets/shots/{slug}-{i}@2.jpg" alt="{E(g["name"])} screenshot {i}" loading="lazy" width="432" height="768">'
             for i in range(1, g["shots"] + 1)
         )
         gallery = f"""

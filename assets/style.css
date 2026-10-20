@@ -286,6 +286,30 @@ section { scroll-margin-top: 16px; }
   transition: transform 0.2s;
 }
 .sound:active { transform: scale(0.9); }
+.sound.nudge { animation: nudge 1.4s ease-in-out infinite; }
+@keyframes nudge { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.15); box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.5); } }
+
+/* screenshot viewer */
+.shots img { cursor: zoom-in; }
+.lightbox {
+  position: fixed; inset: 0; z-index: 50; display: grid; place-items: center;
+  background: rgba(20, 12, 30, 0.86); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+  opacity: 0; pointer-events: none; transition: opacity 0.25s;
+}
+.lightbox.open { opacity: 1; pointer-events: auto; }
+.lightbox img {
+  max-width: min(92vw, 520px); max-height: 86vh; width: auto; height: auto; border-radius: 22px;
+  box-shadow: 0 30px 80px -20px rgba(0, 0, 0, 0.7); transform: scale(0.94); transition: transform 0.3s cubic-bezier(.2, .9, .3, 1.3);
+}
+.lightbox.open img { transform: none; }
+.lightbox button {
+  position: absolute; width: 48px; height: 48px; border-radius: 50%; border: 0; cursor: pointer;
+  background: rgba(255, 255, 255, 0.92); color: var(--ink); font: 700 30px/1 "Fredoka", sans-serif;
+}
+.lb-close { top: 16px; right: 16px; }
+.lb-prev { left: 12px; top: 50%; transform: translateY(-50%); }
+.lb-next { right: 12px; top: 50%; transform: translateY(-50%); }
+.lb-count { position: absolute; bottom: 18px; left: 50%; transform: translateX(-50%); color: white; font-weight: 800; font-size: 14px; }
 .phone::before {
   content: ""; position: absolute; inset: -30px; z-index: -1; border-radius: 50%;
   background: conic-gradient(from 0deg, var(--c1), var(--c2), #fff, var(--c1));

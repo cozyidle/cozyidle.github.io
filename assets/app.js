@@ -90,14 +90,93 @@
     update();
   }
 
-  // Sound on/off for the gameplay video (it starts muted so it can autoplay).
+  // The gameplay video plays with its sound from the start. Browsers only
+  // allow that after the visitor has touched the page, so if the first try
+  // is refused the video plays silently and the sound comes on with the
+  // first tap, click or key anywhere. The button turns it off and on.
   const video = $(".phone video"), sound = $(".sound");
   if (video && sound) {
-    sound.addEventListener("click", () => {
-      video.muted = !video.muted;
-      if (!video.muted) video.play();
+    let wantSound = true;
+    const show = () => {
       sound.textContent = video.muted ? "🔇" : "🔊";
       sound.setAttribute("aria-label", video.muted ? "Turn sound on" : "Turn sound off");
+      sound.classList.toggle("nudge", video.muted && wantSound);
+    };
+    const withSound = () => {
+      video.muted = false;
+      return video.play().then(show, () => {
+        video.muted = true;
+        video.play().catch(() => {});
+        show();
+      });
+    };
+    const onFirstTouch = () => {
+      if (wantSound && video.muted) withSound();
+      ["pointerdown", "keydown", "touchstart"].forEach((e) => removeEventListener(e, onFirstTouch, true));
+    };
+    ["pointerdown", "keydown", "touchstart"].forEach((e) => addEventListener(e, onFirstTouch, true));
+    withSound();
+    sound.addEventListener("click", (e) => {
+      e.stopPropagation();
+      wantSound = video.muted;
+      if (wantSound) withSound();
+      else {
+        video.muted = true;
+        show();
+      }
+    });
+  }
+
+  // Screenshots open big on a tap: swipe or use the arrows, tap outside or
+  // press Esc to close.
+  const shots = [...document.querySelectorAll(".shots img")];
+  if (shots.length) {
+    const box = document.createElement("div");
+    box.className = "lightbox";
+    box.setAttribute("role", "dialog");
+    box.setAttribute("aria-modal", "true");
+    box.innerHTML = '<img alt=""><button class="lb-close" type="button" aria-label="Close">×</button>' +
+      '<button class="lb-prev" type="button" aria-label="Previous">‹</button><button class="lb-next" type="button" aria-label="Next">›</button>' +
+      '<div class="lb-count"></div>';
+    document.body.appendChild(box);
+    const big = $("img", box), count = $(".lb-count", box);
+    let at = 0, startX = null;
+    const go = (i) => {
+      at = (i + shots.length) % shots.length;
+      big.src = shots[at].dataset.big || shots[at].src;
+      big.alt = shots[at].alt;
+      count.textContent = at + 1 + " / " + shots.length;
+    };
+    const open = (i) => {
+      go(i);
+      box.classList.add("open");
+      document.documentElement.style.overflow = "hidden";
+    };
+    const close = () => {
+      box.classList.remove("open");
+      document.documentElement.style.overflow = "";
+    };
+    shots.forEach((img, i) => {
+      img.tabIndex = 0;
+      img.addEventListener("click", () => open(i));
+      img.addEventListener("keydown", (e) => { if (e.key === "Enter") open(i); });
+    });
+    $(".lb-close", box).addEventListener("click", close);
+    $(".lb-prev", box).addEventListener("click", (e) => { e.stopPropagation(); go(at - 1); });
+    $(".lb-next", box).addEventListener("click", (e) => { e.stopPropagation(); go(at + 1); });
+    box.addEventListener("click", (e) => { if (e.target === box) close(); });
+    addEventListener("keydown", (e) => {
+      if (!box.classList.contains("open")) return;
+      if (e.key === "Escape") close();
+      if (e.key === "ArrowLeft") go(at - 1);
+      if (e.key === "ArrowRight") go(at + 1);
+    });
+    box.addEventListener("touchstart", (e) => { startX = e.touches[0].clientX; }, { passive: true });
+    box.addEventListener("touchend", (e) => {
+      if (startX === null) return;
+      const dx = e.changedTouches[0].clientX - startX;
+      if (Math.abs(dx) > 40) go(at + (dx < 0 ? 1 : -1));
+      startX = null;
     });
   }
 
