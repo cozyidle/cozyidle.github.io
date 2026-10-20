@@ -74,6 +74,22 @@
     t._h = setTimeout(() => t.classList.remove("show"), 2200);
   }
 
+  // Screenshot strip: arrow buttons, hidden at either end.
+  const strip = $(".shots");
+  if (strip) {
+    const prev = $(".arrow.prev"), next = $(".arrow.next");
+    const update = () => {
+      prev.hidden = strip.scrollLeft < 8;
+      next.hidden = strip.scrollLeft + strip.clientWidth > strip.scrollWidth - 8;
+    };
+    const step = () => strip.clientWidth * 0.8;
+    prev.addEventListener("click", () => strip.scrollBy({ left: -step(), behavior: "smooth" }));
+    next.addEventListener("click", () => strip.scrollBy({ left: step(), behavior: "smooth" }));
+    strip.addEventListener("scroll", update, { passive: true });
+    addEventListener("resize", update);
+    update();
+  }
+
   const slug = body.dataset.game;
   if (!slug || body.dataset.status !== "testing") return;
 

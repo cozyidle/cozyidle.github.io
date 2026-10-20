@@ -299,7 +299,18 @@ section { scroll-margin-top: 16px; }
   animation: bob 4s ease-in-out infinite;
 }
 
-.gallery { margin: 0 -16px 56px; }
+.gallery { position: relative; margin: 0 -16px 56px; }
+.arrow {
+  position: absolute; top: 50%; z-index: 2; transform: translateY(-50%);
+  width: 44px; height: 44px; border-radius: 50%; border: 0; cursor: pointer;
+  font: 700 28px/1 "Fredoka", sans-serif; color: var(--ink);
+  background: rgba(255, 255, 255, 0.92); box-shadow: 0 8px 20px -8px rgba(0, 0, 0, 0.35);
+  transition: opacity 0.2s, transform 0.2s;
+}
+.arrow:active { transform: translateY(-50%) scale(0.92); }
+.arrow.prev { left: 10px; }
+.arrow.next { right: 10px; }
+.arrow[hidden] { display: block; opacity: 0; pointer-events: none; }
 .shots {
   display: flex; gap: 14px; overflow-x: auto; scroll-snap-type: x mandatory;
   padding: 10px 16px 24px; scrollbar-width: none;
@@ -311,6 +322,13 @@ section { scroll-margin-top: 16px; }
   transition: transform 0.3s;
 }
 .shots img:hover { transform: translateY(-6px) rotate(-1deg); }
+/* Wide screens: every screenshot fits in one row, no scrolling needed. */
+@media (min-width: 900px) {
+  .gallery { margin: 0 0 56px; }
+  .shots { display: grid; grid-template-columns: repeat(var(--n), minmax(0, 1fr)); overflow: visible; padding: 10px 0 24px; }
+  .shots img { width: 100%; }
+  .arrow { display: none !important; }
+}
 
 .about { padding-bottom: 56px; }
 .feats { display: grid; gap: 14px; }

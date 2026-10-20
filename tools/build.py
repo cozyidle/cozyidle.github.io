@@ -208,7 +208,9 @@ def build_game(g):
         )
         gallery = f"""
     <section class="gallery reveal" aria-label="Screenshots">
-      <div class="shots">{shots}</div>
+      <button class="arrow prev" type="button" aria-label="Previous screenshots">‹</button>
+      <div class="shots" style="--n:{g['shots']}">{shots}</div>
+      <button class="arrow next" type="button" aria-label="Next screenshots">›</button>
     </section>"""
     else:
         visual = f'<div class="icon-stage big"><div class="ring"></div><img src="../assets/icons/{slug}.png" alt="" width="256" height="256"></div>'
