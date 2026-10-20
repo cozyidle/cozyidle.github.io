@@ -90,6 +90,17 @@
     update();
   }
 
+  // Sound on/off for the gameplay video (it starts muted so it can autoplay).
+  const video = $(".phone video"), sound = $(".sound");
+  if (video && sound) {
+    sound.addEventListener("click", () => {
+      video.muted = !video.muted;
+      if (!video.muted) video.play();
+      sound.textContent = video.muted ? "🔇" : "🔊";
+      sound.setAttribute("aria-label", video.muted ? "Turn sound on" : "Turn sound off");
+    });
+  }
+
   const slug = body.dataset.game;
   if (!slug || body.dataset.status !== "testing") return;
 

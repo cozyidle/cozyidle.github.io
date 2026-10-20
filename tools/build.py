@@ -200,8 +200,18 @@ def build_game(g):
         cta = '<span class="btn ghost disabled">🌱 Coming soon</span>'
     more = '<a class="btn ghost" href="#about">What\'s inside</a>'
 
-    if g["shots"]:
+    if g.get("video"):
+        # the store preview video, playing silently in the phone; tap the button for sound
+        visual = (
+            f'<div class="phone has-video"><video src="../assets/video/{slug}.mp4" poster="../assets/video/{slug}.jpg" '
+            f'autoplay muted loop playsinline preload="metadata" aria-label="{E(g["name"])} gameplay video"></video>'
+            '<button class="sound" type="button" aria-label="Turn sound on">🔇</button></div>'
+        )
+    elif g["shots"]:
         visual = f"""<div class="phone"><img src="../assets/shots/{slug}-1.jpg" alt="{E(g['name'])} screenshot" width="432" height="768"></div>"""
+    else:
+        visual = f'<div class="icon-stage big"><div class="ring"></div><img src="../assets/icons/{slug}.png" alt="" width="256" height="256"></div>'
+    if g["shots"]:
         shots = "".join(
             f'<img src="../assets/shots/{slug}-{i}.jpg" alt="{E(g["name"])} screenshot {i}" loading="lazy" width="432" height="768">'
             for i in range(1, g["shots"] + 1)
@@ -213,7 +223,6 @@ def build_game(g):
       <button class="arrow next" type="button" aria-label="Next screenshots">›</button>
     </section>"""
     else:
-        visual = f'<div class="icon-stage big"><div class="ring"></div><img src="../assets/icons/{slug}.png" alt="" width="256" height="256"></div>'
         gallery = ""
 
     features = "".join(

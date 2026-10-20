@@ -278,7 +278,14 @@ section { scroll-margin-top: 16px; }
   transform: rotate(4deg);
   animation: bob 5s ease-in-out infinite;
 }
-.phone img { width: 100%; height: 100%; object-fit: cover; border-radius: 28px; }
+.phone img, .phone video { display: block; width: 100%; height: 100%; object-fit: cover; border-radius: 28px; background: #1D1530; }
+.phone.has-video { aspect-ratio: 886 / 1920; width: min(58vw, 270px); }
+.sound {
+  position: absolute; right: -14px; bottom: 40px; width: 48px; height: 48px; border-radius: 50%; border: 0; cursor: pointer;
+  font-size: 22px; background: white; box-shadow: 0 8px 20px -8px rgba(0, 0, 0, 0.45);
+  transition: transform 0.2s;
+}
+.sound:active { transform: scale(0.9); }
 .phone::before {
   content: ""; position: absolute; inset: -30px; z-index: -1; border-radius: 50%;
   background: conic-gradient(from 0deg, var(--c1), var(--c2), #fff, var(--c1));
