@@ -264,6 +264,7 @@ def build_game(g):
           <li><span class="ic">📧</span><span>Stay signed in with the <b>same Gmail</b> you gave us.</span></li>
           <li><span class="ic">🔄</span><span>See <b>"Item not found"</b>? Switch to that Gmail in the Play Store (tap your profile picture).</span></li>
           <li><span class="ic">📅</span><span>Please <b>keep the game installed for 14 days</b>. It really helps!</span></li>
+          <li><span class="ic">🙏</span><span>Please <b>don't tap "Leave"</b> on the test page for at least 14 days. It helps the game launch on Google Play.</span></li>
         </ul>
       </div>
       <button class="btn ghost" id="share" type="button">🔗 Share this page</button>

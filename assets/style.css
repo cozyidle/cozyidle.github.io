@@ -417,7 +417,8 @@ section { scroll-margin-top: 16px; }
 
 /* more games */
 .more { padding-bottom: 56px; }
-.minis { display: grid; gap: 12px; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); }
+.minis { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+.minis .mini { flex: 0 1 160px; min-width: 140px; }
 .mini {
   display: flex; align-items: center; gap: 10px; padding: 8px; border-radius: 18px; text-decoration: none;
   background: var(--card); border: 1px solid var(--card-border); font-weight: 800; font-size: 14px; line-height: 1.2;
